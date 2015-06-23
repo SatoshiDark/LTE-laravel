@@ -28,3 +28,10 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+/* New Routes for image import*/
+Route::get('profile', 'ProfileController@index');
+Route::get('profile/get/{filename}', [
+    'as' => 'getentry', 'uses' => 'ProfileController@get']);
+Route::post('profile/add',[
+    'as' => 'addentry', 'uses' => 'ProfileController@add']);
